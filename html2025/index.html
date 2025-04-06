@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfólio Pessoal</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background-color: #005f73;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.5em;
+    }
+
+    header p {
+      font-size: 1.2em;
+    }
+
+    nav {
+      background-color: #0a9396;
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #94d2bd;
+    }
+
+    section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #005f73;
+    }
+
+    #sobre p {
+      font-size: 1.1em;
+    }
+
+    #projetos .projeto {
+      background-color: #e9ecef;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+    }
+
+    #contato input, #contato textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    #contato button {
+      background-color: #005f73;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    #contato button:hover {
+      background-color: #0a9396;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #0a9396;
+      color: white;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.8em;
+      }
+
+      nav a {
+        display: block;
+        margin: 10px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Jonas Marcelo da Silva Kuster</h1>
+    <p>Estudante de Analise e Desenvolvimento de Sistemas</p>
+  </header>
+
+  <nav>
+    <a href="#sobre">Sobre Mim</a>
+    <a href="#projetos">Projetos</a>
+    <a href="#contato">Contato</a>
+  </nav>
+
+  <section id="sobre">
+    <img src="jonas.jpeg" alt="Minha foto" width="200">
+    <h2>Sobre Mim</h2>
+    <p>   Oi Meu Nome é Jonas ,sou um estudante apaixonado por tecnologia e desenvolvimento web. Gosto de criar sites e aplicativos que facilitem a vida das pessoas. Nas horas vagas, adoro correr no parque e ir na academia</p>
+  </section>
+
+  <section id="projetos">
+    <h2>Projetos</h2>
+    <article class="projeto">
+      <h3>Site de Receitas</h3>
+      <p>Um site que permite aos usuários buscar e compartilhar receitas caseiras.</p>
+      <img src="receita.png" alt="Minha foto" width="350">
+
+    </article>
+    <article class="projeto">
+      <h3>To-Do List</h3>
+      <p>Aplicativo simples de lista de tarefas com interface interativa.</p>
+      <img src="listas.png" alt="Minha foto" width="300">
+
+    </article>
+  </section>
+
+  <section id="contato">
+    <h2>Contato</h2>
+    <form onsubmit="return validarFormulario()">
+      <input type="text" id="nome" placeholder="Seu nome">
+      <input type="email" id="email" placeholder="Seu email">
+      <textarea id="mensagem" rows="5" placeholder="Sua mensagem"></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Jonas Kuster RU283051 - Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    function validarFormulario() {
+      const nome = document.getElementById("nome").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const mensagem = document.getElementById("mensagem").value.trim();
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      if (!nome) {
+        alert("Por favor, preencha o campo nome.");
+        return false;
+      }
+
+      if (!emailRegex.test(email)) {
+        alert("Por favor, insira um e-mail válido.");
+        return false;
+      }
+
+      if (!mensagem) {
+        alert("Por favor, escreva sua mensagem.");
+        return false;
+      }
+
+      alert("Mensagem enviada com sucesso!");
+      return false; // Evita envio real
+    }
+  </script>
+</body>
+</html>
